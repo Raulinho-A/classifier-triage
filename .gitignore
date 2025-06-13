@@ -199,3 +199,8 @@ cython_debug/
 
 # Ignorar modelos entrenados
 notebook/models/*
+
+# Ignorar modelos y metadata
+app/model/*.pkl
+app/model/*.cbm
+app/model/*.json
