@@ -22,7 +22,7 @@ def classify_batch(input_data: BatchTriageInput):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
     
-@router.get("/schema")
+@router.get("/triage")
 def get_model_schema():
     return {
         "columns": expected_columns,
