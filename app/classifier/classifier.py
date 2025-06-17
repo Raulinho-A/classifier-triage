@@ -4,13 +4,18 @@ from app.classifier.model_loader import pipeline_rf
 from typing import List
 
 def run_model(input_data: TriageInput) -> dict:
+    print("Input recibido:", input_data)
     input_dict = input_data.model_dump(by_alias=True)
     df_validated = validate(input_dict)
     prediction = pipeline_rf.predict(df_validated)[0]
-    return {
+
+    result = {
         "emergency_status": int(prediction),
         "message": "Emergencia" if prediction == 1 else "No emergencia"
     }
+
+    print("Predicción generada:", result)
+    return result
 
 def run_model_batch(input_list: List[dict]) -> List[dict]:
     results = []
