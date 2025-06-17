@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from typing import List
 
 class TriageInput(BaseModel):
     Group: int = Field(..., description="Tipo de ED: 1 = Local (3er nivel), 2 = Regional (4to nivel)")
@@ -15,3 +16,6 @@ class TriageInput(BaseModel):
 
     class Config:
         validate_by_name = True
+
+class BatchTriageInput(BaseModel):
+    data: List[TriageInput]

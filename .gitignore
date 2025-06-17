@@ -201,6 +201,8 @@ cython_debug/
 notebook/models/*
 
 # Ignorar modelos y metadata
+*.cbm
+*.pkl
 app/model/*.pkl
 app/model/*.cbm
 app/model/*.json
