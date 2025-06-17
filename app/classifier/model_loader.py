@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from catboost import CatBoostClassifier
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 MODEL_DIR = BASE_DIR / "model"
 
 # RandomForest pipeline
